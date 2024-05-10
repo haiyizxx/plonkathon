@@ -2,14 +2,15 @@
 name = "plonkathon"
 version = "0.1.0"
 description = "A simple Python implementation of PLONK adapted from py_plonk"
-authors = ["0xPARC / Vitalik Buterin"]
+authors = ["0xPARC"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
 py-ecc = "^6.0.0"
-merlin = {git = "https://github.com/nalinbhardwaj/curdleproofs.pie", rev = "master", subdirectory = "merlin"}
+merlin_transcripts = {git = "https://github.com/nalinbhardwaj/curdleproofs.pie", rev = "master", subdirectory = "merlin_transcripts"}
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^0.991"
