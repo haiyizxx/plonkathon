@@ -35,9 +35,16 @@ class Program:
     group_order: int
 
     def __init__(self, constraints: list[str], group_order: int):
+        """
+        the "group order" typically refers to the number of elements in the group
+        the group order determines the maximum degree to which polynomials can be evaluated efficiently
+        """
         if len(constraints) > group_order:
             raise Exception("Group order too small")
+        # c <== a * b
+        # [AssemblyEqn(wires=GateWires(L='a', R='b', O='c'), coeffs={'a*b': 1})]
         assembly = [eq_to_assembly(constraint) for constraint in constraints]
+
         self.constraints = assembly
         self.group_order = group_order
 

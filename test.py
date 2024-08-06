@@ -18,6 +18,7 @@ def setup_test():
     dummy_values = Polynomial(
         list(map(Scalar, [1, 2, 3, 4, 5, 6, 7, 8])), Basis.LAGRANGE
     )
+
     program = Program(["c <== a * b"], 8)
     commitment = setup.commit(dummy_values)
     assert commitment == G1Point(
